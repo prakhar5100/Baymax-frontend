@@ -5,17 +5,17 @@ import card3 from '../assets/images/card3.jpg';
 export const faq = [
     {
         head: "What is the accuracy of this model?",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo viverra maecenas accumsan lacus vel facilisis.",
+        text: "This model is 98% accurate in it's unit tests. However, a fluctuation of 2% is possible in real-world scenarios.",
         hidden: true
     },
     {
         head: "Can this model replace doctors?",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo viverra maecenas accumsan lacus vel facilisis.",
+        text: "No, this model is not a replacement for professional medical advice. It is a tool to help you understand your symptoms better and make informed decisions.",
         hidden: true
     },
     {
-        head: "Do you have a warranty?",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo viverra maecenas accumsan lacus vel facilisis.",
+        head: "How does this model work?",
+        text: "This model uses a vast database of symptoms and conditions to analyze your symptoms and suggest possible conditions. It uses advanced machine learning algorithms to provide accurate predictions.",
         hidden: true
     }
 
@@ -60,6 +60,8 @@ export const love = [
         name: "Naman",
         role: "AI Developer",
         img: "https://i.pinimg.com/736x/fa/63/17/fa631717fe43dd97d35902241323c79f.jpg",
-        github: "ttps://github.com/nmnnegi/"
+        github: "https://github.com/nmnnegi/"
     }
 ]
+
+export const modal = "Baymax is your complete healthcare companion. It offers personalized treatment plans, helps you find nearby hospitals and doctors, and features an intelligent chatbot for health-related questions. Whether you need advice or urgent care, Baymax ensures you're never alone in your health journey."

@@ -4,12 +4,9 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-const KEY = import.meta.env.VITE_API_KEY;
-console.log(KEY);
-
 const hospitalIcon = new L.Icon({
   iconUrl:
-    `https://api.geoapify.com/v1/icon/?type=awesome&color=%23ff0000&icon=hospital&apiKey=${KEY}`,
+    "https://api.geoapify.com/v1/icon/?type=awesome&color=%23ff0000&icon=hospital&apiKey=6efa22873bb84db2a192e37a4b6bd409",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -22,6 +19,7 @@ const HospitalsNearby = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [mapVisible, setMapVisible] = useState(false);
+  
 
   const fetchPlaces = async () => {
     setLoading(true);
@@ -34,7 +32,7 @@ const HospitalsNearby = () => {
 
           try {
             const response = await axios.get(
-              `https://api.geoapify.com/v2/places?categories=healthcare.hospital,healthcare&filter=circle:${longitude},${latitude},5000&limit=10&apiKey=${KEY}`
+              `https://api.geoapify.com/v2/places?categories=healthcare.hospital,healthcare&filter=circle:${longitude},${latitude},5000&limit=10&apiKey=6efa22873bb84db2a192e37a4b6bd409`
             );
             setPlaces(response.data.features);
             setLoading(false);
@@ -97,7 +95,9 @@ Loading...
 }
 
       {mapVisible && location.latitude && location.longitude && (
-        <div className="flex max-sm:flex-col border justify-around mx-4 gap-16 lg:mt-8 transiton-all ease-in-out duration-500">
+        <div className="flex max-sm:flex-col border justify-around mx-4 gap-16 lg:mt-8 transiton-all ease-in-out duration-500"
+        style={{position: "relative",zIndex:1}}
+        >
           <MapContainer
             center={[location.latitude, location.longitude]}
             zoom={13}
@@ -105,7 +105,7 @@ Loading...
             className="w-1/2 max-sm:w-full rounded-lg border border-spacing-1 border-[#2b374b]"
           >
             <TileLayer
-              url={`https://maps.geoapify.com/v1/tile/osm-liberty/{z}/{x}/{y}.png?apiKey=${KEY}`}
+              url="https://maps.geoapify.com/v1/tile/osm-liberty/{z}/{x}/{y}.png?apiKey=6efa22873bb84db2a192e37a4b6bd409"
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
 

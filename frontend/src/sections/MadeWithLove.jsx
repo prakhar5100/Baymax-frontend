@@ -9,7 +9,7 @@ return (
                             love.map((person, index) => {
                                     return (
                                             <div key={index} className='flex flex-col items-center justify-center'>
-                                                    <img src={person.img} alt={person.name} className='w-32 h-32 rounded-full mb-2' />
+                                                    <img src={person.img} alt={person.name} className='w-32 h-32 rounded-full mb-2 hover:rotate-12 transition-all ease-in-out duration-500 cursor-pointer' />
                                                     <h3 className='text-white text-2xl max-md:text-xl font-bold'>{person.name}</h3>
                                                     <p className='text-slate-200 text-lg max-md:text-sm'>{person.role}</p>
                                                     <a href={person.github} className="text-slate-400 text-sm hover:underline" target="blank">{person.github}</a>
