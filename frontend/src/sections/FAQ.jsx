@@ -16,12 +16,12 @@ const FAQ = () => {
 
   return (
     <section className="min-h-max w-screen flex flex-col justify-center lg:px-16 px-8 py-16 
-    bg-[#e2e8f0]  text-[#293549]">
+    bg-[#e2e8f0]  text-[#293549]" id="faq">
       <div className="flex items-center justify-center">
         <p className="font-custom lg:text-6xl font-bold text-4xl text-center">Frequently Asked Questions</p>
       </div>
 
-      <div className="flex max-sm:flex-col lg:mt-20 gap-10">
+      <div className="flex max-sm:flex-col mt-20 max-md:mt-14 gap-10">
         <div className="bg-faq w-[40%] bg-cover bg-top rounded-lg"></div>
 
         <div className="w-[50%] max-sm:w-full">
@@ -39,7 +39,7 @@ const FAQ = () => {
                   faq.hidden ? "max-h-0" : "max-h-[200px]"
                 }`}
               >
-                <p className="font-futura lg:text-xl text-sm">{faq.text}</p>
+                <p className="font-futura lg:text-lg text-slate-700 text-sm">{faq.text}</p>
               </div>              <div className="border-t border-[#293549] my-6"></div>
             </div>
           ))}

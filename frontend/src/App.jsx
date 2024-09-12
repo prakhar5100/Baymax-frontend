@@ -1,5 +1,4 @@
 import Hero from "./sections/Hero"
-import Nav from "./components/Nav"
 import Working from "./sections/Working"
 import FAQ from "./sections/FAQ"
 import About from "./sections/About"

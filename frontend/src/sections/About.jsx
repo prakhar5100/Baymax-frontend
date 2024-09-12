@@ -3,7 +3,7 @@ import { cardInfo } from '../constants'
 
 const About = () => {
   return (
-    <div className='w-screen h-max bg-slate-200 flex flex-col space-y-5 lg:px-16'>
+    <div className='w-screen h-max bg-slate-200 flex flex-col space-y-5 lg:px-16' id='about'>
 
             <h1 className='text-[#263145] text-6xl max-sm:text-4xl font-bold text-center mt-16 max-sm:mt-8'>What is Baymax?</h1>
 
