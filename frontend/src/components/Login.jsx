@@ -23,8 +23,8 @@ const Login = ({ onDelete, next }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/authentication/login/', {
-        username: email, // Assuming the backend expects 'username' instead of 'email'
+      const response = await axios.post('http://127.0.0.1:8000/api/authentication/login/', {
+        email: email, // Assuming the backend expects 'username' instead of 'email'
         password
       });
       setIsConfettiRunning(true);

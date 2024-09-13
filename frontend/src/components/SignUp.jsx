@@ -23,8 +23,8 @@ const SignUp = ({ onDelete, next }) => {
     e.preventDefault();
     try {
 
-      const response = await axios.post('/api/authentication/register/', {
-        username: email, // Assuming the backend expects 'username' instead of 'email'
+      const response = await axios.post('http://127.0.0.1:8000/api/authentication/register/', {
+        email: email, // Assuming the backend expects 'username' instead of 'email'
         password
       });
       setIsConfettiRunning(true);
