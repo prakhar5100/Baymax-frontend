@@ -4,6 +4,7 @@ import Hamburger from 'hamburger-react'
 import Login from './Login'
 import SignUp from './SignUp'
 
+
 const NeWNav = () => {
     const [logoCol, setLogoCol] = useState(false);
     const [bgColor, setBgColor] = useState("bg-transparent");
@@ -11,6 +12,7 @@ const NeWNav = () => {
     const [isOpen, setOpen] = useState(false);  
     const [login, setLogin] = useState(false);
     const [signUp, setSign] = useState(false);
+
 
 
     useEffect(() => {
@@ -39,6 +41,7 @@ const NeWNav = () => {
     
   return (
     <nav className={`h-max w-screen ${bgColor} ${textCol} fixed z-10 transition-all ease-in-out duration-500`}>
+
       {login && <Login 
           onDelete = {() => setLogin(false)}
           next = {() => (setSign(true), setLogin(false))}
@@ -46,6 +49,7 @@ const NeWNav = () => {
             {signUp && <SignUp 
           onDelete = {() => setSign(false)}
           next = {() => (setSign(false), setLogin(true))}
+
 
       />}
 
