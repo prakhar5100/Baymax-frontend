@@ -1,32 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Confetti from "react-confetti";
 
 const Login = ({ onDelete, next }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isConfettiRunning, setIsConfettiRunning] = useState(false);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsConfettiRunning(false);
+      setIsVisible(false); 
+    }, 15000); 
+    return () => clearTimeout(timer);
+  }, []);
+
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/authentication/login/', {
-        email: email,
+      const response = await axios.post('/api/authentication/login/', {
+        username: email, // Assuming the backend expects 'username' instead of 'email'
         password
       });
-      console.log('Login successful!', response.data);
-      setIsVisible(false);
+      setIsConfettiRunning(true);
+      alert('Login successful!', response.data);
+      // Hide the login section after successful submission
+      // Here you can add logic to handle successful login (e.g., storing tokens, redirecting)
     } catch (error) {
-      console.error('Error logging in', error);
+      alert('Error logging in', error);
+      // Here you can add logic to handle login errors (e.g., showing error messages)
     }
   };
 
   if (!isVisible) {
-    return null; 
+    return null; // Render nothing if the component is not visible
   }
 
   return (
     <section className='bg-black bg-opacity-35 absolute inset-0 h-screen'>
+            {isConfettiRunning && <Confetti />}
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
