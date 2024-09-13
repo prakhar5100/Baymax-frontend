@@ -17,9 +17,9 @@ def register(request):
 def login(request):
     serializer = LoginSerializer(data=request.data)
     if serializer.is_valid():
-        username = serializer.validated_data['username']
+        email = serializer.validated_data['email']
         password = serializer.validated_data['password']
-        user = authenticate(username=username, password=password)
+        user = authenticate(username=email, password=password)
         if user is not None:
             refresh = RefreshToken.for_user(user)
             return Response({
