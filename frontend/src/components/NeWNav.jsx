@@ -1,16 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Hamburger from 'hamburger-react'
+import Login from './Login'
+import SignUp from './SignUp'
 
 const NeWNav = () => {
     const [logoCol, setLogoCol] = useState(false);
-    const [bgColor, setBgColor] = useState("bg-white");
-    const [textCol, setTextCol] = useState("text-black");
+    const [bgColor, setBgColor] = useState("bg-transparent");
+    const [textCol, setTextCol] = useState("text-white");
     const [isOpen, setOpen] = useState(false);  
+    const [login, setLogin] = useState(false);
+    const [signUp, setSign] = useState(false);
+
 
     useEffect(() => {
         const handleScroll = () => {
-          if (window.scrollY > 250) {
+          if (window.scrollY > 150) {
             setBgColor("bg-white");
             setTextCol("text-black");
             setLogoCol(true);
@@ -33,17 +38,27 @@ const NeWNav = () => {
       };
     
   return (
-    <nav className={`h-max w-screen ${bgColor} ${textCol} fixed z-10 transition-all ease-in-out duration-1000`}>
+    <nav className={`h-max w-screen ${bgColor} ${textCol} fixed z-10 transition-all ease-in-out duration-500`}>
+      {login && <Login 
+          onDelete = {() => setLogin(false)}
+          next = {() => (setSign(true), setLogin(false))}
+      />}
+            {signUp && <SignUp 
+          onDelete = {() => setSign(false)}
+          next = {() => (setSign(false), setLogin(true))}
+
+      />}
+
         <div className="max-w-7xl min-w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 border-b
-         border-b-white transition-all ease-in-out duration-500">
-            <div className="flex justify-around items-center h-16 transition-all ease-in-out duration-1000">
+         border-b-white transition-all ease-in-out duration-500 ">
+            <div className="flex justify-around items-center h-16 transition-all ease-in-out duration-500">
                 <div className="flex items-center">
                     <a href="#" className="text-2xl font-bold">
                     Baymax
                     </a>
                 </div>
         
-                <div className="hidden lg:flex space-x-10 items-center ml-11 transition-all ease-in-out duration-1000">
+                <div className="hidden lg:flex space-x-10 items-center ml-11 transition-all ease-in-out duration-500">
                     <a href="#" className="text-xl hover:underline">
                     Home
                     </a>
@@ -59,18 +74,21 @@ const NeWNav = () => {
                 </div>
 
                 {!logoCol ? (
-            <div className="hidden lg:flex space-x-4 transition-all ease-in-out duration-1000">
+            <div className="hidden lg:flex space-x-4 transition-all ease-in-out duration-500">
               <a
                 href="#"
                 className="bg-transparent px-8 py-2 hover:bg-white border 
-                 border-white hover:text-black text-white rounded-full transition-all duration-1000 ease-in-out"
+                 border-white hover:text-black text-white rounded-full transition-all duration-500 ease-in-out"
+                 onClick={() => (setLogin(true))}
               >
                 Login
               </a>
               <a
                 href="#"
                 className="bg-transparent px-8 py-2 hover:bg-white border
-                 border-white hover:text-black text-white rounded-full transition-all duration-1000 ease-in-out"
+                 border-white hover:text-black text-white rounded-full transition-all duration-500 ease-in-out"
+                 onClick={() => (setSign(true))}
+
               >
                 Sign Up
               </a>
@@ -81,6 +99,7 @@ const NeWNav = () => {
                 href="#"
                 className="bg-transparent px-8 py-2 hover:bg-[#283448] 
                 border border-black hover:text-white text-black rounded-full transition-all duration-500 ease-in-out"
+                onClick={() => (setLogin(true))}
               >
                 Login
               </a>
@@ -88,6 +107,8 @@ const NeWNav = () => {
                 href="#"
                 className="bg-transparent px-8 py-2 hover:bg-[#283448] 
                 border border-black hover:text-white text-black rounded-full transition-all duration-500 ease-in-out"
+                onClick={() => (setSign(true))}
+
               >
                 Sign Up
               </a>
@@ -97,7 +118,7 @@ const NeWNav = () => {
 <div className="flex items-center lg:hidden">
             <button
               onClick={toggleMenu}
-              className="focus:outline-none"
+              className={`${(login || signUp) ? `hidden` : `block`}`}
             >
               <Hamburger toggled={isOpen} toggle={setOpen} />
             </button>
@@ -123,6 +144,7 @@ const NeWNav = () => {
                     href="#"
                     className="bg-transparent px-8 py-2 hover:bg-[#283448] border text-center
                      border-black hover:text-white text-black rounded-full transition-all duration-500 ease-in-out"
+                     onClick={() => (setLogin(true), setOpen(false))}
                 >
                     Login
                 </a>
@@ -130,6 +152,8 @@ const NeWNav = () => {
                     href="#"
                     className="bg-transparent px-8 py-2 hover:bg-[#283448] border text-center
                      border-black hover:text-white text-black rounded-full transition-all duration-500 ease-in-out"
+                     onClick={() => (setSign(true), setOpen(false))}
+
                 >
                     Sign Up
                 </a>
