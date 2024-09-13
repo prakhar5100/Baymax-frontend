@@ -10,8 +10,8 @@ const Login = ({ onDelete, next }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/authentication/login/', {
-        username: email,
+      const response = await axios.post('http://127.0.0.1:8000/api/authentication/login/', {
+        email: email,
         password
       });
       console.log('Login successful!', response.data);

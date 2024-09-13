@@ -10,8 +10,8 @@ const SignUp = ({ onDelete, next }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/authentication/register/', {
-        username: email,
+      const response = await axios.post('http://127.0.0.1:8000/api/authentication/register/', {
+        email: email,
         password
       });
       console.log('Sign Up successful!', response.data);

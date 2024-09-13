@@ -44,7 +44,6 @@ function App() {
       setFeatures({
         ...features,
         [feature]: 1, // Set selected feature's value to 1
-        toDelete: false,
       });
     }
     setSearchTerm('');
@@ -58,11 +57,11 @@ function App() {
     setError(null); // Clear any previous errors
     try {
       // Convert features object to an array of feature values (0 or 1)
+
       const featureValues = Object.values(features);
 
       // Send a POST request to the Django API
-      console.log(featureValues)
-      const response = await axios.post('http://127.0.0.1:8000/api/predict/', {
+      const response = await axios.post('http://127.0.0.1:8000/api/predictions/predict/', {
         features: featureValues,
       });
 
