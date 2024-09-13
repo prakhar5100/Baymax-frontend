@@ -21,9 +21,9 @@ const Hero = () => {
           <p className="mt-4 text-white text-lg lg:text-2xl font-futura lg:mt-8">
             Your personal healthcare companion
           </p>
-          <button className="text-sm font-futura lg:text-lg px-4 py-2 lg:px-8 lg:py-4 
+          <a href="#working" className="inline-block text-sm font-futura lg:text-lg px-4 py-2 lg:px-8 lg:py-4 
           text-center bg-transparent hover:bg-white text-white hover:text-black border border-white
-           rounded-full mt-14 transition all ease-in-out duration-500 shadow-[0_0_15px_5px_rgba(255,255,255,0.5)] "> Try It Now!</button>
+           rounded-full mt-14 transition all ease-in-out duration-500 shadow-[0_0_15px_5px_rgba(255,255,255,0.5)] "> Try It Now!</a>
 
 </div>
       </div>
