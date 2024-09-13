@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 const Chatbot = () => {
-  // API configuration
-const API_KEY = import.meta.env.VITE_GEMINI_KEY; // Your API key here
+const API_KEY = import.meta.env.VITE_GEMINI_KEY;
 const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
   const [showPopover, setShowPopover] = useState(false);
   const [chatInput, setChatInput] = useState('');
@@ -11,14 +10,12 @@ const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:
   const [chatview, setChatview] = useState(false);
 
 
-  // Function to call the Gemini API
   const handleChatSubmit = async (e) => {
     e.preventDefault();
     if (!chatInput) return;
 
     setIsLoading(true);
 
-    // Push the user's message to the chat history
     setChatHistory((prev) => [...prev, { sender: 'user', message: chatInput }]);
 
     try {

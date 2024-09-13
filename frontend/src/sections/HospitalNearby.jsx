@@ -4,9 +4,11 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
+const GEOAPIFY_KEY = import.meta.env.VITE_GEOAPIFY_KEY;
+
 const hospitalIcon = new L.Icon({
   iconUrl:
-    "https://api.geoapify.com/v1/icon/?type=awesome&color=%23ff0000&icon=hospital&apiKey=6efa22873bb84db2a192e37a4b6bd409",
+    `https://api.geoapify.com/v1/icon/?type=awesome&color=%23ff0000&icon=hospital&apiKey=${GEOAPIFY_KEY}`,
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -32,7 +34,7 @@ const HospitalsNearby = () => {
 
           try {
             const response = await axios.get(
-              `https://api.geoapify.com/v2/places?categories=healthcare.hospital,healthcare&filter=circle:${longitude},${latitude},5000&limit=10&apiKey=6efa22873bb84db2a192e37a4b6bd409`
+              `https://api.geoapify.com/v2/places?categories=healthcare.hospital,healthcare&filter=circle:${longitude},${latitude},5000&limit=10&apiKey=${GEOAPIFY_KEY}`
             );
             setPlaces(response.data.features);
             setLoading(false);
@@ -105,7 +107,7 @@ Loading...
             className="w-1/2 max-sm:w-full rounded-lg border border-spacing-1 border-[#2b374b]"
           >
             <TileLayer
-              url="https://maps.geoapify.com/v1/tile/osm-liberty/{z}/{x}/{y}.png?apiKey=6efa22873bb84db2a192e37a4b6bd409"
+              url={`https://maps.geoapify.com/v1/tile/osm-liberty/{z}/{x}/{y}.png?apiKey=${GEOAPIFY_KEY}`}
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             />
 

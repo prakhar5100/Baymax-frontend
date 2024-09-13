@@ -11,21 +11,18 @@ const Login = ({ onDelete, next }) => {
     e.preventDefault();
     try {
       const response = await axios.post('/api/authentication/login/', {
-        username: email, // Assuming the backend expects 'username' instead of 'email'
+        username: email,
         password
       });
       console.log('Login successful!', response.data);
-      // Hide the login section after successful submission
       setIsVisible(false);
-      // Here you can add logic to handle successful login (e.g., storing tokens, redirecting)
     } catch (error) {
       console.error('Error logging in', error);
-      // Here you can add logic to handle login errors (e.g., showing error messages)
     }
   };
 
   if (!isVisible) {
-    return null; // Render nothing if the component is not visible
+    return null; 
   }
 
   return (
