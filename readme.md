@@ -96,6 +96,7 @@ Baymax is an AI-powered healthcare application designed to predict potential dis
 
 ## Python Dependencies
 
+```bash
 asgiref==3.8.1
 Django==5.1.1
 django-cors-headers==4.4.0
@@ -114,6 +115,7 @@ threadpoolctl==3.5.0
 typing_extensions==4.12.2
 tzdata==2024.1
 psycopg2==2.9.9
+```
 
 ## How It Works
 
