@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const fetchFeatures = async () => {
       try {
-        const response = await fetch('src/sections/features.json');
+        const response = await fetch('/features.json');
         const data = await response.json();
         setFeatures(data.features);
       } catch (err) {
