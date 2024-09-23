@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import featuresJSON from './features.json';
+
 
 // Main App component
 function App() {
@@ -15,9 +17,7 @@ function App() {
   useEffect(() => {
     const fetchFeatures = async () => {
       try {
-        const response = await fetch('/features.json');
-        const data = await response.json();
-        setFeatures(data.features);
+        setFeatures(featuresJSON.featuresJSON);
       } catch (err) {
         setError('Failed to load features');
       }
