@@ -1,5 +1,5 @@
 {
-    "features": {
+    "featuresJSON": {
       "abdominal_pain": 0,
       "abnormal_menstruation": 0,
       "acidity": 0,
@@ -136,4 +136,6 @@
       "prognosis": 0
     }
   }
+
+
   
