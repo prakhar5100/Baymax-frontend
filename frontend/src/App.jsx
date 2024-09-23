@@ -5,7 +5,7 @@ import About from "./sections/About"
 import HospitalsNearby from "./sections/HospitalNearby"
 import Contact from "./sections/Contact"
 import MadeWithLove from "./sections/MadeWithLove"
-import Chatbot from "./components/chatbot"
+import Chatbot from "./components/Chatbot"
 import NeWNav from "./components/NeWNav"
 
 const App = () => {
