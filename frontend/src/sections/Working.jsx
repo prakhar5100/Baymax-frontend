@@ -61,7 +61,7 @@ function App() {
       const featureValues = Object.values(features);
 
       // Send a POST request to the Django API
-      const response = await axios.post('http://127.0.0.1:8000/api/predictions/predict/', {
+      const response = await axios.post('https://baymax-deploy.onrender.com/predict', {
         features: featureValues,
       });
 
