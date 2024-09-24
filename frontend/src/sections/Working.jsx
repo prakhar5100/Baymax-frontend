@@ -67,7 +67,7 @@ function App() {
       console.log("success");
       console.log(response)// Set the prediction result from the API response
       setLoading(false); // Set loading state to false
-      setPrediction(response.data.prediction);
+      setPrediction(response.data);
     } catch (error) {
       setLoading(false); // Set loading state to false
       setError('An error occurred while predicting. Please try again.');
