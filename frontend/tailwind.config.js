@@ -18,8 +18,8 @@ export default {
         poppinsBold : ['Poppins-Bold']
       },
       backgroundImage: {
-        "bg-image" : "url('src/assets/images/baymax_wallpaper.jpg')",
-        "faq" : "url('src/assets/images/faq.jpg')"
+        "bg-image" : "url('/images/baymax_wallpaper.jpg')",
+        "faq" : "url('/images/faq.jpg')"
       },
       dropShadow: {
         'glow': '0 0 10px rgba(255,255,255,0.5)', // Custom glow shadow

@@ -30,7 +30,7 @@ const Card = ({img, title, text}) => {
                             hover:text-[#263145] focus:outline-none'>&times;</button>
                         </div>
                         <div className='flex max-sm:flex-col'>
-                        <img src="\src\assets\images\modal.png" alt="" className='w-52 mx-auto'/>
+                        <img src="/images/modal.png" alt="" className='w-52 mx-auto'/>
                         <div className=''>
                             <h5 className='text-2xl text-center font-bold text-[#263145] pt-2'>What's More?</h5>
                             <p className='text-lg text-[#263145] py-6 px-8 max-sm:tracking-tighter text-justify max-sm:h-40 overflow-auto'>{modal}</p>
