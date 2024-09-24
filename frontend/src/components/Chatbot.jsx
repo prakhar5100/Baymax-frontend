@@ -66,7 +66,7 @@ const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:
 
       {/* Chatbot Logo */}
       <img
-        src="src/assets/images/logo.png"
+        src="/images/logo.png"
         alt="Baymax"
         width={100}
         className=''
