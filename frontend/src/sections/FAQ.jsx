@@ -22,7 +22,10 @@ const FAQ = () => {
       </div>
 
       <div className="flex max-sm:flex-col mt-20 max-md:mt-14 gap-10">
-        <div className="bg-faq w-[40%] bg-cover bg-top rounded-lg"></div>
+                <div className="w-[40%] bg-cover bg-top rounded-lg"
+        style={{backgroundImage: "url('images/faq.jpg')"}}
+        ></div>
+
 
         <div className="w-[50%] max-sm:w-full">
           <div className="border-t border-[#293549] my-6"></div>
