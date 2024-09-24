@@ -64,8 +64,8 @@ function App() {
       const response = await axios.post('https://baymax-deploy.onrender.com/predict', {
         features: featureValues,
       });
-
-      // Set the prediction result from the API response
+      console.log("success");
+      console.log(response)// Set the prediction result from the API response
       setLoading(false); // Set loading state to false
       setPrediction(response.data.prediction);
     } catch (error) {
