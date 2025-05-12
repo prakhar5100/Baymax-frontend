@@ -33,6 +33,7 @@ const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-
       });
 
       const data = await response.json();
+      console.log(data.candidates[0].content.parts[0])
 
       setChatHistory((prev) => [...prev, { sender: 'baymax', message: data?.candidates[0]?.content?.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1') || 'Sorry, I could not understand that.' }]);
     } catch (error) {
