@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Chatbot = () => {
 const API_KEY = import.meta.env.VITE_GEMINI_KEY;
-const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
   const [showPopover, setShowPopover] = useState(false);
   const [chatInput, setChatInput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
