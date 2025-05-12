@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Chatbot = () => {
 const API_KEY = import.meta.env.VITE_GEMINI_KEY;
-const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
   const [showPopover, setShowPopover] = useState(false);
   const [chatInput, setChatInput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
@@ -33,6 +33,7 @@ const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:
       });
 
       const data = await response.json();
+      console.log(data.candidates[0].content.parts[0])
 
       setChatHistory((prev) => [...prev, { sender: 'baymax', message: data?.candidates[0]?.content?.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1') || 'Sorry, I could not understand that.' }]);
     } catch (error) {
